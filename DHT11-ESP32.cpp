@@ -18,10 +18,10 @@ DHT dht(DHTPIN, DHTTYPE);  // Khởi tạo đối tượng DHT
 WidgetLED LED_ON_APP(V2);
 int button;
 
-// Thông tin WiFi và Blynk Auth Token
+
 char auth[] = BLYNK_AUTH_TOKEN;   
-char ssid[] = "337 NGUYEN OANH";        // Thay thế bằng tên WiFi của bạn
-char pass[] = "12345689";    // Thay thế bằng mật khẩu WiFi của bạn
+char ssid[] = "337 NGUYEN OANH";       
+char pass[] = "12345689";    
 
 
 void setup() {
@@ -44,7 +44,7 @@ BLYNK_WRITE(V3){
 }
 
 void loop() {
-  Blynk.run();       // Chạy tiến trình Blynk
+  Blynk.run();      
   float t = dht.readTemperature();
   float h = dht.readHumidity();
   if (isnan(h) || isnan(t)){
